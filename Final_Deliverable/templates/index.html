@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+  <!--https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29sbGVnZSUyMGFkbWlzc2lvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60-->
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/samplestyle.css')}}">
+  
+</head>
+<!--<form action="{{ url_for('predict')}}"method="post">
+  <input type="text" name="Gre" placeholder="Gre" required="required" />
+  <input type="text" name="TOEFL" placeholder="TOEFL" required="required" />
+  <input type="text" name="University" placeholder="University" required="required" />
+  <input type="text" name="SOP" placeholder="SOP" required="required" />
+  <input type="text" name="LOR" placeholder="LOR" required="required" />
+  <input type="text" name="CGPA" placeholder="CGPA" required="required" />
+  <input type="text" name="Research" placeholder="Research" required="required" />
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>-->
+<body>
+  <div class="container">
+    <!-- code here -->
+    <div class="card">
+      <div class="card-image">	
+        <h2 class="card-heading">
+          University Admission Predictor<br>
+          <small>Know your chances</small>
+        </h2>
+      </div>
+      <form class="card-form" action="{{ url_for('predict')}}"method="post">
+        <div class="input">
+          <input type="text" name="Gre" placeholder="Gre" required="required" class = "input-field" />
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="TOEFL" placeholder="TOEFL" required="required" class = "input-field"/>
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="University" placeholder="University" required="required" class = "input-field"/>
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="SOP" placeholder="SOP" required="required" class = "input-field"/>
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="LOR" placeholder="LOR" required="required" class = "input-field"/>
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="CGPA" placeholder="CGPA" required="required" class = "input-field" /> 
+          <label class="input-label"></label>
+        </div>
+        <div class="input">
+          <input type="text" name="Research" placeholder="Research" required="required" class = "input-field"/>
+          <label class="input-label"></label>
+        </div>
+        <div class="action">
+          <button type="submit" class="action-button">Predict</button>
+        </div><br>
+      </form>
+      <a href="http://localhost/login/logout.php">
+        <div class="action">
+          <button class="action-button2">Logout</button>
+        </div>
+      </a>
+      <div class = "output">
+        <center><small>{{ prediction_text }}</small></center>
+      <div>
+    </div>
+    
+  </div>
+</body>
+</html>
